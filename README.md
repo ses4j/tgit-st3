@@ -1,10 +1,10 @@
 tgit-st3
 ========
 
-TortoiseGit Plugin for Sublime Text 3
+TortoiseGit Plugin for Sublime Text 2/3
 
 A simple plugin to expose the best of the TortoiseGit GUI to the 
-Sublime Text 3 context menu.
+Sublime Text 2/3 context menu.
 
 Adds the following to the context menu for an active file:
 
@@ -20,8 +20,9 @@ by looking at the project file or the first open folder.
 
 Until this plugin is added to Package Control, try this:
 
-1. Go to folder `Packages`: %APPDATA%\Sublime Text 3\Packages
-2. Run `git clone git@github.com:ses4j/tgit-st3.git`
+1. Go to folder `Packages`: 
+   It can be found at `%APPDATA%\Sublime Text 3\Packages`.  Also, clicking `Preferences/Browse Packages...` in Sublime Text will open the right directory.
+2. In that directory, run `git clone git@github.com:ses4j/tgit-st3.git`
 
 ## Thanks
 

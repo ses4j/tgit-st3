@@ -49,15 +49,15 @@ def run_tortoise_git_command(command, path):
     if tortoisegit_path is None or not os.path.isfile(tortoisegit_path):
         tortoisegit_path = 'TortoiseGitProc.exe'
 
-    cmd = '{} /command:"{}" /path:"{}"'.format(
+    cmd = '{0} /command:"{1}" /path:"{2}"'.format(
         tortoisegit_path, 
         command,
         path)
 
     try:
-        print("Running {}".format(cmd))
+        print("Running {0}".format(cmd))
         proc = subprocess.Popen(cmd, stdout=subprocess.PIPE)
-    except FileNotFoundError as ex:
+    except IOError as ex:
         sublime.error_message("Failed to execute command: {}".format(
             str(ex)))
         raise
