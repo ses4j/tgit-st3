@@ -1,9 +1,9 @@
 tgit-st3
 ========
 
-TortoiseGit Plugin for Sublime Text 2/3
-...because who has time to `Open Containing Folder...`
-and THEN use TortoiseGit?
+**A TortoiseGit Plugin for Sublime Text 2/3**  
+*...because who has time to `Open Containing Folder...`
+and THEN use TortoiseGit?*
 
 A simple plugin to expose the best of the TortoiseGit GUI to the 
 Sublime Text 2/3 context menu.
