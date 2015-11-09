@@ -1,11 +1,7 @@
 """
 Invoke useful TortoiseGit GUI windows from Sublime Text 3
 
-By Scott Stafford, https://github.com/ses4j
-
-With borrowed contributions from the wonderful Git plugins: 
-	* https://github.com/kemayo/sublime-text-git
-
+Scott Stafford, https://github.com/ses4j
 """
 
 
@@ -16,7 +12,7 @@ import sublime, sublime_plugin
 from .tgit_utils import *
 
 class TortoiseGitCommandBase(sublime_plugin.WindowCommand):
-    def is_visible(self):
+    def is_enabled(self):
         return is_git_controlled(self._relevant_path())
 
     def _active_file_path(self):

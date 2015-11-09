@@ -2,12 +2,7 @@
 Invoke useful TortoiseGit GUI windows from Sublime Text 3
 
 By Scott Stafford, https://github.com/ses4j
-
-With borrowed contributions from the wonderful Git plugins: 
-	* https://github.com/kemayo/sublime-text-git
-
 """
-
 
 import os
 import time
@@ -17,6 +12,7 @@ import subprocess
 
 git_root_cache = {}
 def git_root(directory):
+    """ This method lifted from https://github.com/kemayo/sublime-text-git """
     global git_root_cache
 
     retval = False
@@ -26,7 +22,6 @@ def git_root(directory):
         return git_root_cache[leaf_dir]['retval']
 
     while directory:
-        print('dir', directory)
         if os.path.exists(os.path.join(directory, '.git')):
             retval = directory
             break
@@ -47,31 +42,22 @@ def git_root(directory):
 def is_git_controlled(directory):
     return bool(git_root(directory))
 
-
 def run_tortoise_git_command(command, path):
-    args = ()
-    settings = sublime.load_settings('TortoiseGIT.sublime-settings')
+    settings = sublime.load_settings('tgit-st3.sublime-settings')
     tortoisegit_path = settings.get('tortoisegit_path')
 
     if tortoisegit_path is None or not os.path.isfile(tortoisegit_path):
-        # sublime.error_message("Can't find TortoiseGitProc.exe.")
-        # raise
         tortoisegit_path = 'TortoiseGitProc.exe'
 
-    # if path is None:
-    #     path = sublime.active_window().active_view().file_name()
-
-    cmd = '%s /command:"%s" /path:"%s" %s' % (
+    cmd = '{} /command:"{}" /path:"{}"'.format(
         tortoisegit_path, 
         command,
-        path,
-        " ".join(args))
+        path)
 
-    print(cmd)
     try:
+        print("Running {}".format(cmd))
         proc = subprocess.Popen(cmd, stdout=subprocess.PIPE)
     except FileNotFoundError as ex:
         sublime.error_message("Failed to execute command: {}".format(
-            str(ex)
-            ))
+            str(ex)))
         raise
