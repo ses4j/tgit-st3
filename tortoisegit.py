@@ -15,42 +15,80 @@ import sublime, sublime_plugin
 
 from .tgit_utils import *
 
-class TortoiseGitCommandBase(sublime_plugin.TextCommand):
-    def _active_file_name(self):
-        view = self.view
+class TortoiseGitCommandBase(sublime_plugin.WindowCommand):
+    def is_visible(self):
+        return is_git_controlled(self._relevant_path())
+
+    def _active_file_path(self):
+        view = self.window.active_view()
         if view and view.file_name() and len(view.file_name()) > 0:
             return view.file_name()
 
-    def is_enabled(self):
-        view = self.view
-        if view and view.file_name() and len(view.file_name()) > 0:
-            return is_git_controlled(view.file_name())
-        return False
+    def _active_repo_path(self):
+        path = self._active_file_path()
+        if not path:
+            path = self.window.project_file_name()
+        if not path:
+            path = self.window.folders()[0]
+        if path is None:
+            return
 
-    def _repository_root_path(self):
-        root = git_root(self._active_file_name())
+        root = git_root(path)
+
         if root is False:
-            return None
+            return
         else:
             return root
 
+    def _active_file_or_repo_path(self):
+        path = self._active_file_path()
+        if path is not None:
+            return path
+
+        # If no active file, then guess the repo.
+        return self._active_repo_path()
+
+    def _execute_command(self, command):
+        run_tortoise_git_command(command, self._relevant_path())
+
+
 class TgitLogCommand(TortoiseGitCommandBase):
     def run(self, edit=None):
-        run_tortoise_git_command('log', self._active_file_name())
+        self._execute_command('log')
+    
+    def _relevant_path(self):
+        return self._active_file_or_repo_path()
+
 
 class TgitDiffCommand(TortoiseGitCommandBase):
     def run(self, edit=None):
-        run_tortoise_git_command('diff', self._active_file_name())
+        self._execute_command('diff')
+
+    def _relevant_path(self):
+        return self._active_file_or_repo_path()
+
 
 class TgitCommitCommand(TortoiseGitCommandBase):
     def run(self, edit=None):
-        root = self._repository_root_path()
-        if root:
-            run_tortoise_git_command('commit', self._repository_root_path())
+        self._execute_command('commit')
+
+    def _relevant_path(self):
+        return self._active_file_path()
+
+
+class TgitCommitRepoCommand(TortoiseGitCommandBase):
+    def run(self, edit=None):
+        self._execute_command('commit')
+
+    def _relevant_path(self):
+        return self._active_repo_path()
+
 
 class TgitSyncCommand(TortoiseGitCommandBase):
     def run(self, edit=None):
-        root = self._repository_root_path()
-        if root:
-            run_tortoise_git_command('sync', self._repository_root_path())
+        self._execute_command('sync')
+
+    def _relevant_path(self):
+        return self._active_repo_path()
+
 
