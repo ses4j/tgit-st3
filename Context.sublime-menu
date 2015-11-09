@@ -1,0 +1,6 @@
+[
+    { "caption" : "TortoiseGit Diff", "command" : "tgit_diff" },
+    { "caption" : "TortoiseGit Show log", "command" : "tgit_log" },
+    { "caption" : "TortoiseGit Commit", "command" : "tgit_commit" },
+    { "caption" : "TortoiseGit Sync", "command" : "tgit_sync" },
+]
