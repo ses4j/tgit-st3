@@ -1,5 +1,5 @@
 """
-Invoke useful TortoiseGit GUI windows from Sublime Text 3
+Invoke useful TortoiseGit GUI windows from Sublime Text
 
 Scott Stafford, https://github.com/ses4j
 """

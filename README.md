@@ -1,5 +1,5 @@
-tgit-st3
-========
+TortoiseGit Context Integration
+===============================
 
 **A TortoiseGit Plugin for Sublime Text 2/3**  
 *...because who has time to `Open Containing Folder...`

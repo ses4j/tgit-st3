@@ -1,5 +1,5 @@
 """
-Invoke useful TortoiseGit GUI windows from Sublime Text 3
+Invoke useful TortoiseGit GUI windows from Sublime Text
 
 By Scott Stafford, https://github.com/ses4j
 """
@@ -43,7 +43,7 @@ def is_git_controlled(directory):
     return bool(git_root(directory))
 
 def run_tortoise_git_command(command, path):
-    settings = sublime.load_settings('tgit-st3.sublime-settings')
+    settings = sublime.load_settings('TortoiseGit Context Integration.sublime-settings')
     tortoisegit_path = settings.get('tortoisegit_path')
 
     if tortoisegit_path is None or not os.path.isfile(tortoisegit_path):
