@@ -9,7 +9,12 @@ import os
 import time
 import sublime, sublime_plugin
 
-from tgit_utils import *
+try:
+    from .tgit_utils import *
+except ValueError:
+    # We get `ValueError: Attempted relative import in non-package` in ST2.
+    from tgit_utils import *
+
 
 class TortoiseGitCommandBase(sublime_plugin.WindowCommand):
     def is_enabled(self):
