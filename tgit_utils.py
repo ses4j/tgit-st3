@@ -56,7 +56,13 @@ def run_tortoise_git_command(command, path):
 
     try:
         print("Running {0}".format(cmd))
-        proc = subprocess.Popen(cmd, stdout=subprocess.PIPE)
+        with open(os.devnull, 'w') as devnull:
+            proc = subprocess.Popen(cmd, 
+                stdin=devnull, 
+                stdout=subprocess.PIPE, 
+                stderr=subprocess.PIPE, 
+                shell=False, 
+                creationflags=subprocess.SW_HIDE)
     except IOError as ex:
         sublime.error_message("Failed to execute command: {}".format(
             str(ex)))
