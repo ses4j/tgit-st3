@@ -93,3 +93,11 @@ class TgitSyncCommand(TortoiseGitCommandBase):
         return self._active_repo_path()
 
 
+class TgitBlameCommand(TortoiseGitCommandBase):
+    def run(self, edit=None):
+        self._execute_command('blame')
+
+    def _relevant_path(self):
+        return self._active_file_or_repo_path()
+
+
