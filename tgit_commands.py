@@ -50,14 +50,12 @@ class TortoiseGitCommandBase(sublime_plugin.WindowCommand):
         return self._active_repo_path()
 
     def _selected_dir(self, dirs):
-        print dirs
         if len(dirs):
             return dirs[0]
         else:
             return
 
     def _execute_command(self, command, path=None):
-        print path
         if path is None:
             run_tortoise_git_command(command, self._relevant_path())
         else:
