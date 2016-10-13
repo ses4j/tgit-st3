@@ -3,8 +3,8 @@
       "children": [
         { "caption" : "Status", "command" : "tgit_status" },
         { "caption" : "Diff", "command" : "tgit_diff" },
-        { "caption" : "Commit", "command" : "tgit_commit" },
-        { "caption" : "Log", "command" : "tgit_log" },
+        { "caption" : "Show log", "command" : "tgit_log" },
+        { "caption" : "Commit...", "command" : "tgit_commit" },
         { "caption" : "Blame", "command" : "tgit_blame" }
       ]
     }

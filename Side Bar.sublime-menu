@@ -3,10 +3,10 @@
       "children": [
         { "caption" : "Status", "command" : "tgit_status", "args": {"dirs": []} },
         { "caption" : "Diff", "command" : "tgit_diff", "args": {"dirs": []} },
-        { "caption" : "Commit", "command" : "tgit_commit", "args": {"dirs": []} },
-        { "caption" : "Log", "command" : "tgit_log", "args": {"dirs": []} },
+        { "caption" : "Show log", "command" : "tgit_log", "args": {"dirs": []} },
+        { "caption" : "Commit...", "command" : "tgit_commit", "args": {"dirs": []} },
         { "caption" : "Blame", "command" : "tgit_blame" },
-        { "caption" : "Sync", "command" : "tgit_sync" }
+        { "caption" : "Sync...", "command" : "tgit_sync" }
       ]
     }
 ]
