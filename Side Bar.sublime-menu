@@ -4,8 +4,8 @@
         { "caption" : "Status", "command" : "tgit_status", "args": {"dirs": []} },
         { "caption" : "Diff", "command" : "tgit_diff", "args": {"dirs": []} },
         { "caption" : "Show log", "command" : "tgit_log", "args": {"dirs": []} },
-        { "caption" : "Commit...", "command" : "tgit_commit", "args": {"dirs": []} },
         { "caption" : "Blame", "command" : "tgit_blame" },
+        { "caption" : "Commit...", "command" : "tgit_commit", "args": {"dirs": []} },
         { "caption" : "Sync...", "command" : "tgit_sync" }
       ]
     }

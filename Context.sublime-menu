@@ -4,10 +4,10 @@
         { "caption" : "Status", "command" : "tgit_status" },
         { "caption" : "Diff", "command" : "tgit_diff" },
         { "caption" : "Show log", "command" : "tgit_log" },
+        { "caption" : "Blame", "command" : "tgit_blame" },
         { "caption" : "Commit...", "command" : "tgit_commit" },
         { "caption" : "Commit (repo)...", "command" : "tgit_commit_repo" },
-        { "caption" : "Sync (repo)...", "command" : "tgit_sync" },
-        { "caption" : "Blame", "command" : "tgit_blame" }
+        { "caption" : "Sync (repo)...", "command" : "tgit_sync" }
       ]
     }
 ]
