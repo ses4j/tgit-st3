@@ -1,0 +1,9 @@
+[
+	{ "id" : "tgit-st3", "caption" : "TortoiseGit", 
+      "children": [
+        { "caption" : "Show log", "command" : "tgit_log_repo" },
+        { "caption" : "Commit...", "command" : "tgit_commit_repo" },
+        { "caption" : "Sync...", "command" : "tgit_sync" }
+      ]
+    }
+]
