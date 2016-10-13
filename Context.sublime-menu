@@ -1,9 +1,10 @@
 [
     { "id" : "tgit-st3", "caption" : "TortoiseGit", 
       "children": [
+        { "caption" : "Status", "command" : "tgit_status" },
         { "caption" : "Diff", "command" : "tgit_diff" },
-        { "caption" : "Show log", "command" : "tgit_log" },
-        { "caption" : "Commit...", "command" : "tgit_commit" },
+        { "caption" : "Commit", "command" : "tgit_commit" },
+        { "caption" : "Log", "command" : "tgit_log" },
         { "caption" : "Blame", "command" : "tgit_blame" }
       ]
     }

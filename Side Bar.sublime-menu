@@ -1,10 +1,12 @@
 [
 	{ "id" : "tgit-st3", "caption" : "TortoiseGit", 
       "children": [
-        { "caption" : "Show log", "command" : "tgit_log_repo" },
-        { "caption" : "Commit...", "command" : "tgit_commit_repo" },
-        { "caption" : "Status", "command" : "tgit_status" },
-        { "caption" : "Sync...", "command" : "tgit_sync" }
+        { "caption" : "Status", "command" : "tgit_status", "args": {"dirs": []} },
+        { "caption" : "Diff", "command" : "tgit_diff", "args": {"dirs": []} },
+        { "caption" : "Commit", "command" : "tgit_commit", "args": {"dirs": []} },
+        { "caption" : "Log", "command" : "tgit_log", "args": {"dirs": []} },
+        { "caption" : "Blame", "command" : "tgit_blame" },
+        { "caption" : "Sync", "command" : "tgit_sync" }
       ]
     }
 ]
