@@ -100,6 +100,12 @@ class TgitSyncCommand(TortoiseGitCommandBase):
     def _relevant_path(self):
         return self._active_repo_path()
 
+class TgitStatusCommand(TortoiseGitCommandBase):
+    def run(self, edit=None):
+        self._execute_command('repostatus')
+
+    def _relevant_path(self):
+        return self._active_repo_path()
 
 class TgitBlameCommand(TortoiseGitCommandBase):
     def run(self, edit=None):

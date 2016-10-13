@@ -3,6 +3,7 @@
       "children": [
         { "caption" : "Show log", "command" : "tgit_log_repo" },
         { "caption" : "Commit...", "command" : "tgit_commit_repo" },
+        { "caption" : "Status", "command" : "tgit_status" },
         { "caption" : "Sync...", "command" : "tgit_sync" }
       ]
     }
