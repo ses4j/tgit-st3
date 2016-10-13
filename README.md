@@ -10,15 +10,23 @@ Sublime Text 2 or Sublime Text 3 context menu.
 
 Adds the following to the context menu for an active file:
 
+* Status (a.k.a. Check for modifications)
 * Diff
-* Show log
-* Commit...
-* Commit... (entire repo)
-* Sync...
-* Blame...
+* Commit
+* Log
+* Blame
+
+Adds the following to the context menu in the side bar:
+
+* Status (a.k.a. Check for modifications)
+* Diff
+* Commit
+* Log
+* Sync
 
 If there is no active file, it tries to guess the "relevant" repository
-by looking at the project file or the first open folder.
+by looking at the project file or the first open folder. In the side bar, 
+it runs the command for the selected directory or file.
 
 ## Installation
 
