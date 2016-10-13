@@ -78,20 +78,20 @@ class TgitDiffCommand(TortoiseGitCommandBase):
         return self._active_file_or_repo_path()
 
 
-class TgitCommitRepoCommand(TortoiseGitCommandBase):
-    def run(self, edit=None):
-        self._execute_command('commit')
-
-    def _relevant_path(self):
-        return self._active_repo_path()
-
-
 class TgitCommitCommand(TortoiseGitCommandBase):
     def run(self, edit=None, dirs=[]):
         self._execute_command('commit', self._selected_dir(dirs))
 
     def _relevant_path(self):
         return self._active_file_or_repo_path()
+
+
+class TgitCommitRepoCommand(TortoiseGitCommandBase):
+    def run(self, edit=None):
+        self._execute_command('commit')
+
+    def _relevant_path(self):
+        return self._active_repo_path()
 
 
 class TgitStatusCommand(TortoiseGitCommandBase):
