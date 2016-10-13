@@ -13,16 +13,20 @@ Adds the following to the context menu for an active file:
 * Status (a.k.a. Check for modifications)
 * Diff
 * Commit
-* Log
+* Show log
 * Blame
+* Commit...
+* Commit (repo)...
+* Sync (repo)...
 
 Adds the following to the context menu in the side bar:
 
 * Status (a.k.a. Check for modifications)
 * Diff
-* Commit
-* Log
-* Sync
+* Show log
+* Blame
+* Commit...
+* Sync...
 
 If there is no active file, it tries to guess the "relevant" repository
 by looking at the project file or the first open folder. In the side bar, 
