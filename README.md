@@ -10,10 +10,9 @@ Sublime Text 2 or Sublime Text 3 context menu.
 
 Adds the following to the context menu for an active file:
 
-* Status (a.k.a. Check for modifications)
 * Diff
-* Commit
 * Show log
+* Check for modifications
 * Blame
 * Commit...
 * Commit (repo)...
@@ -21,9 +20,9 @@ Adds the following to the context menu for an active file:
 
 Adds the following to the context menu in the side bar:
 
-* Status (a.k.a. Check for modifications)
 * Diff
 * Show log
+* Check for modifications
 * Blame
 * Commit...
 * Sync...
