@@ -42,17 +42,18 @@ def git_root(directory):
 def is_git_controlled(directory):
     return bool(git_root(directory))
 
-def run_tortoise_git_command(command, path):
+def run_tortoise_git_command(command, args, path):
     settings = sublime.load_settings('TortoiseGit Context Integration.sublime-settings')
     tortoisegit_path = settings.get('tortoisegit_path')
 
     if tortoisegit_path is None or not os.path.isfile(tortoisegit_path):
         tortoisegit_path = 'TortoiseGitProc.exe'
 
-    cmd = '{0} /command:"{1}" /path:"{2}"'.format(
+    cmd = u'{0} /command:"{1}" /path:"{2}" {3}'.format(
         tortoisegit_path, 
         command,
-        path)
+        path, 
+        u" ".join(args))
 
     try:
         print("Running {0}".format(cmd))

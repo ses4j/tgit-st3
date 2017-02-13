@@ -20,6 +20,15 @@ class TortoiseGitCommandBase(sublime_plugin.WindowCommand):
     def is_enabled(self):
         return is_git_controlled(self._relevant_path())
 
+    def _active_line_number(self):
+
+        view = self.window.active_view()
+        if view:
+            (row,col) = view.rowcol(view.sel()[0].begin())
+            return row
+        else:
+            return None
+
     def _active_file_path(self):
         view = self.window.active_view()
         if view and view.file_name() and len(view.file_name()) > 0:
@@ -56,10 +65,16 @@ class TortoiseGitCommandBase(sublime_plugin.WindowCommand):
             return
 
     def _execute_command(self, command, path=None):
+        args = []
+
+        line_number = self._active_line_number()
+        if line_number:
+            args.append("/line:{}".format(line_number))
+
         if path is None:
-            run_tortoise_git_command(command, self._relevant_path())
+            run_tortoise_git_command(command, args, self._relevant_path())
         else:
-            run_tortoise_git_command(command, path)
+            run_tortoise_git_command(command, args, path)
 
 
 class TgitLogCommand(TortoiseGitCommandBase):
